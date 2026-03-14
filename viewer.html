@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Answers</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Answers</h2>
+<div id="answers"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const course = params.get("course");
+
+const images = [
+`courses/${course}/q1.png`,
+`courses/${course}/q2.png`,
+`courses/${course}/q3.png`
+];
+
+const container = document.getElementById("answers");
+
+images.forEach(img => {
+let image = document.createElement("img");
+image.src = img;
+image.className = "answer";
+container.appendChild(image);
+});
+</script>
+
+</body>
+</html>
